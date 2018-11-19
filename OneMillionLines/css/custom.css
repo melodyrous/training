@@ -1,0 +1,87 @@
+/* Vos customisations des classes de Bootstrap */
+body{
+	background-color: whitesmoke;	
+}
+h2{
+	text-align: center;
+	margin: 3rem
+
+}
+hr{
+	color: rgb(231, 76, 60);
+	border-color: rgb(231, 76, 60);
+	width: 15%;
+	text-align: center;
+}
+
+.jumbotron{
+	text-align: center;
+	background-image: url("../images/hero-image.jpg");
+	color: white;	
+}
+.titreJumbotron{
+font-family: Arvo;
+}
+.jumbotron p{
+	font-weight: 100;
+}
+
+.academy{
+	text-align: center;
+	padding-right:8%;
+	padding-left: 8%;
+	padding-top: 2em;
+	padding-bottom: 2em;
+	font-size: 2rem
+
+
+}
+.style{
+	color:rgb(231, 76, 60);
+	font-family:Arvo;
+}
+#get-involved{
+	background-color: gainsboro;
+	padding: 1em;
+}
+.partners{
+
+}
+
+.partners div{
+	text-align: center;
+	padding: 2em;
+}
+footer{
+	padding: 1em;
+	padding-top: 5em;
+	background-color: rgb(231, 76, 60);
+}
+
+.dropleft{
+	display: none;
+}
+
+/* Responsive Styling */
+
+@media (max-width: 1199px) {
+
+}
+
+@media (max-width: 991px) {
+
+}
+
+@media (max-width: 767px) {
+	ul.nav { display: none;}
+	.dropleft{
+		display: block;
+		float: right;
+	}
+	.dropdown-item{
+		display: block;
+		text-align: center
+	}	
+}
+
+
