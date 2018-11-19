@@ -1,0 +1,40 @@
+p{
+    text-align: right;
+    width: 50vh;
+}
+
+#calculatrice{
+    border-color: black;
+    border-style: solid;
+    margin-top: 50vh;
+    transform: translateY(-50%);
+    width: 50vh;
+
+}
+
+#screen{
+    border-color: black;
+    border-style: solid;
+    background-color: rgb(133, 192, 182);
+    height: 10vh;
+    font-size: 2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    white-space: initial;
+}
+
+
+
+
+#keyboard div, #keyboard button{
+    border-color: black;
+    border-style: outset;
+    text-align: center;
+    font-size: 2rem;
+    background-color: darkcyan;
+}
+
+#keyboard button:hover{
+    border-style: ridge;
+}
+
