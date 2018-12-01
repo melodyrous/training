@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://localhost:8080/stylesheet.css">
+    
+    <title>Clients</title>
+</head>
+
+<body>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h2 class="bold">Clients</h2>
+                <ul class="list-group" id="liste">
+                </ul>
+            </div>
+            <div class="col-md-8" class="card border rounded" id="card">
+                <span class="card border rounded"> 
+                    <div class="card-body">
+                        <h4 class="card-title"></h5>
+                        <p class="card-text"></p>
+                    </div>
+                </span>
+            </div>
+            
+            <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+            
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    <script>
+        $("document").ready(function(){
+            document.addEventListener("touchstart", function(){}, true);
+        var ulEl = document.getElementById('liste');
+        
+        $.get( "http://localhost:8080/fichierClients.json", function( data ) {
+            console.log(data);
+
+            data.forEach(addLienListe);
+        }).fail(console.log('FAIL'));
+        
+        function addLienListe(objet){
+            let listEl = document.createElement('li');
+            listEl.className = "list-group-item"
+            let lien = document.createElement('a');
+            lien.textContent = objet.nom+" "+objet.prenom;
+            lien.href = "#";
+            listEl.appendChild(lien);
+            ulEl.appendChild(listEl);
+            // lien.addEventListener('click',createCard(objet));
+        };
+        
+        // function createCard(client) {
+        //     card = document.createElement('div');
+        //     card.className = "card-body";
+        //     cardTitle = document.createElement('h4');
+        //     cardTitle.className = 'card-title';
+        //     cardTitle.textContent = client.nom+" "+client.prenom;
+        //     cardText = document.createElement('p');
+        //     cardText.className = "card-text";
+        //     card.appendChild(cardTitle);
+        //     card.appendChild(cardText);
+        //     document.getElementById("carte").append(card)
+        // };
+
+            $("ul").on('click','li a',function(){
+                console.log($(this).text())
+                var request = "http://localhost:8080/client/"+$(this).text();
+        $.get( request,function( data ) {
+                console.log(data);
+                document.querySelector('.card-title').textContent = data.nom+" "+data.prenom;
+                document.querySelector('.card-text').innerHTML = "telephone: "+data.telephone+"<br/>ville: "+data.ville;
+            }).fail(console.log('FAIL'));
+    });
+
+        }
+
+        )
+        
+        </script>
+
+        </body>
+        
+    </body>
+    </html>

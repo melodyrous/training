@@ -1,0 +1,18 @@
+#liste {
+    height: 500px;
+    max-height: 500px;
+    width: 200px;
+    overflow-y:scroll;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+#card{
+    display:flex;
+    height: 500px;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    margin: auto;
+    padding: auto;
+}
